@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>CSS Selectors</title>
+  </head>
+  <body>
+    <nav id="navbar">
+      <header>CSS Selectors</header>
+      <ul>
+        <li><a class="nav-link" href="#Attribute_selectors">Attribute selectors</a></li>
+      </ul>
+      <ul>
+        <li><a class="nav-link" href="#Class_selectors">Class selectors</a></li>
+      </ul>
+      <ul>
+        <li><a class="nav-link" href="#ID_selectors">ID selectors</a></li>
+      </ul>
+      <ul>
+        <li><a class="nav-link" href="#Type_selectors">Type selectors</a></li>
+      </ul>
+      <ul>
+        <li><a class="nav-link" href="#Universal_selectors">Universal selectors</a></li>
+      </ul>
+    </nav>
+    <main id="main-doc">
+      <section class="main-section" id="Attribute_selectors">
+        <header>Attribute selectors</header>
+        <p>The CSS attribute selector matches elements based on the presence or value of a given attribute.</p>
+        <ul>
+          <li>
+            <code>[attr]</code>
+            <p>Represents elements with an attribute name of <em>attr</em>.</p>
+            <pre>
+              <code>
+/* &lt;a&gt; elements with a title attribute */
+a[title] {
+  color: purple;
+}
+              </code>
+            </pre>
+          </li>
+          <li>
+            <code>element::not([attr])</code>
+            <p>Represents elements without an attribute name of <em>attr</em>.</p>
+            <pre>
+              <code>
+/* All divs without a `lang` attribute are italicized. */
+div::not([lang]) {
+  font-style: italic;
+}
+              </code>
+            </pre>
+          </li>
+          <li>
+            <code>[attr=value]</code>
+            <p>Represents elements with an attribute name of <em>attr</em> whose value is exactly <em>value</em>.</p>
+            <pre>
+              <code>
+/* &lt;a&gt; elements with an href matching "https://example.org" */
+a[href="https://example.org"]
+{
+  color: green;
+}
+              </code>
+            </pre>
+          </li>
+          <li>
+            <code>[attr~=value]</code>
+            <p>Represents elements with an attribute name of <em>attr</em> whose value is a whitespace-separated list of words, one of which is exactly <em>value</em>.</p>
+            <pre>
+              <code>
+/* &lt;a&gt; elements whose class attribute contains the word "logo" */
+a[class~="logo"] {
+  padding: 2px;
+}
+              </code>
+            </pre>
+          </li>
+          <li>
+            <code>[attr|=value]</code>
+            <p>Represents elements with an attribute name of <em>attr</em> whose value can be exactly <em>value</em> or can begin with <em>value</em> immediately followed by a hyphen, <code>-</code> (U+002D). It is often used for language subcode matches.</p>
+            <pre>
+              <code>
+/* All divs in Chinese are red, whether simplified (zh-CN) or traditional (zh-TW). */
+div[lang|="zh"] {
+  color: red;
+}
+              </code>
+            </pre>
+          </li>
+          <li>
+            <code>[attr^=value]</code>
+            <p>Represents elements with an attribute name of <em>attr</em> whose value is prefixed (preceded) by <em>value</em>.</p>
+            <pre>
+              <code>
+/* Internal links, beginning with "#" */
+a[href^="#"] {
+  background-color: gold;
+}
+              </code>
+            </pre>
+          </li>
+          <li>
+            <code>[attr$=value]</code>
+            <p>Represents elements with an attribute name of <em>attr</em> whose value is suffixed (followed) by <em>value</em>.</p>
+            <pre>
+              <code>
+/* &lt;a&gt; elements with an href ending ".org" */
+a[href$=".org"] {
+  font-style: italic;
+}
+              </code>
+            </pre>
+          </li>
+          <li>
+            <code>[attr*=value]</code>
+            <p>Represents elements with an attribute name of <em>attr</em> whose value contains at least one occurence of <em>value</em> within the string.</p>
+            <pre>
+              <code>
+/* Links with "example" anywhere in the URL */
+a[href*="example"] {
+  background-color: silver;
+}
+              </code>
+            </pre>
+          </li>
+          <li>
+            <code>[attr operator value i]</code>
+            <p>Adding an <code>i</code> (or <code>I</code>) before the closing bracket causes the value to be compared case-insensitively (for characters within the ASCII range).</p>
+            <pre>
+              <code>
+/* Links with "insensitive" anywhere in the URL, regardless of capitalization */
+a[href*="insensitive" i] {
+  color: cyan;
+}
+              </code>
+            </pre>
+          </li>
+        </ul>
+      </section>
+      <section class="main-section" id="Class_selectors">
+        <header>Class selectors</header>
+        <p>The CSS class selector matches elements based on the contents of their class attribute.</p>
+        <pre>
+          <code>
+/* All elements with class="spacious" */
+.spacious {
+  margin: 2em;
+}
+
+/* All &lt;li&gt; elements with class="spacious" */
+li.spacious {
+  margin: 2em;
+}
+
+/* All &lt;li&gt; elements with a class list that includes both "spacious" and "elegant", e.g. class="elegant retro spacious" */
+li.spacious.elegant {
+  margin: 2em;
+}
+          </code>
+        </pre>
+      </section>
+      <section class="main-section" id="ID_selectors">
+        <header>ID selectors</header>
+        <p>The CSS ID selector matches an element based on the value of the element's <code>id</code> attribute. In order for the element to be selected, its <code>id</code> attribute must match exactly the value given in the selector.</p>
+        <pre>
+          <code>
+/* The element with id="demo" */
+#demo {
+  border: red 2px solid;
+}
+          </code>
+        </pre>
+      </section>
+      <section class="main-section" id="Type_selectors">
+        <header>Type selectors</header>
+        <p>The CSS type selector matches elements by node name. In other words, it selects all elements of the given type within a document.</p>
+        <pre>
+          <code>
+/* All &lt;a&gt; elements */
+a {
+  color: red;
+}
+          </code>
+        </pre>
+        <p>Type selectors can be namespaced using <code>@namespace</code>. This is useful when dealing with documents containing multiple namespaces such as HTML with inline SVG or MATHML, or XML that mixes multiple vocabularies.</p>
+        <ul>
+          <li>
+            <code>ns|h1</code> - matches <code>&lt;h1&gt;</code> elements in namespace <em>ns</em>
+          </li>
+          <li>
+            <code>*|h1</code> - matches all <code>&lt;h1&gt;</code> elements
+          </li>
+          <li>
+            <code>|h1</code> - matches all <code>&lt;h1&gt;</code> elements without any declared namespace
+          </li>
+        </ul>
+        <pre>
+          <code>
+@namespace example url(http://www.example.com);
+example|h1 {
+  color: blue;
+}
+          </code>
+        </pre>
+      </section>
+      <section class="main-section" id="Universal_selectors">
+        <header>Universal selectors</header>
+        <p>The CSS universal selector (<code>*</code>) matches elements of any type.</p>
+        <pre>
+          <code>
+* {
+  color: green;
+}
+
+* [lang^="en"] {
+  color: blue;
+}
+
+.floating {
+  float: left;
+}
+
+/* Automatically clear the next sibling after a floating element */
+.floating + * {
+  clear: left;
+}
+          </code>
+        </pre>
+        <p>The universal selector is a special type selector and can therefore be namespaced using <code>@namespace</code>.</p>
+        <ul>
+          <li><code>ns|*</code> - matches all elements in namespace <em>ns</em></li>
+          <li><code>*|*</code> - matches all elements</li>
+          <li><code>|*</code> - matches all elements without any declared namespace</li>
+        </ul>
+        <pre>
+          <code>
+@namespace example url(http://www.example.com);
+example|* {
+  color: blue;
+}
+          </code>
+        </pre>
+      </section>
+      <section class="main-section" id="Reference">
+        <header>Reference</header>
+        <p>All documentation on this page is taken from <a href="https://developer.mozilla.org/en-US/docs/Web/CSS">MDN</a>.</p>
+      </section>
+    </main>
+  </body>
+</html>
