@@ -11,17 +11,9 @@
       <header>CSS Selectors</header>
       <ul>
         <li><a class="nav-link" href="#Attribute_selectors">Attribute selectors</a></li>
-      </ul>
-      <ul>
         <li><a class="nav-link" href="#Class_selectors">Class selectors</a></li>
-      </ul>
-      <ul>
         <li><a class="nav-link" href="#ID_selectors">ID selectors</a></li>
-      </ul>
-      <ul>
         <li><a class="nav-link" href="#Type_selectors">Type selectors</a></li>
-      </ul>
-      <ul>
         <li><a class="nav-link" href="#Universal_selectors">Universal selectors</a></li>
       </ul>
     </nav>
@@ -38,8 +30,7 @@
 /* &lt;a&gt; elements with a title attribute */
 a[title] {
   color: purple;
-}
-              </code>
+}              </code>
             </pre>
           </li>
           <li>
@@ -50,8 +41,7 @@ a[title] {
 /* All divs without a `lang` attribute are italicized. */
 div::not([lang]) {
   font-style: italic;
-}
-              </code>
+}              </code>
             </pre>
           </li>
           <li>
@@ -63,8 +53,7 @@ div::not([lang]) {
 a[href="https://example.org"]
 {
   color: green;
-}
-              </code>
+}              </code>
             </pre>
           </li>
           <li>
@@ -75,8 +64,7 @@ a[href="https://example.org"]
 /* &lt;a&gt; elements whose class attribute contains the word "logo" */
 a[class~="logo"] {
   padding: 2px;
-}
-              </code>
+}              </code>
             </pre>
           </li>
           <li>
@@ -87,8 +75,7 @@ a[class~="logo"] {
 /* All divs in Chinese are red, whether simplified (zh-CN) or traditional (zh-TW). */
 div[lang|="zh"] {
   color: red;
-}
-              </code>
+}              </code>
             </pre>
           </li>
           <li>
@@ -99,8 +86,7 @@ div[lang|="zh"] {
 /* Internal links, beginning with "#" */
 a[href^="#"] {
   background-color: gold;
-}
-              </code>
+}              </code>
             </pre>
           </li>
           <li>
@@ -111,8 +97,7 @@ a[href^="#"] {
 /* &lt;a&gt; elements with an href ending ".org" */
 a[href$=".org"] {
   font-style: italic;
-}
-              </code>
+}              </code>
             </pre>
           </li>
           <li>
@@ -123,8 +108,7 @@ a[href$=".org"] {
 /* Links with "example" anywhere in the URL */
 a[href*="example"] {
   background-color: silver;
-}
-              </code>
+}              </code>
             </pre>
           </li>
           <li>
@@ -135,8 +119,7 @@ a[href*="example"] {
 /* Links with "insensitive" anywhere in the URL, regardless of capitalization */
 a[href*="insensitive" i] {
   color: cyan;
-}
-              </code>
+}              </code>
             </pre>
           </li>
         </ul>
@@ -159,8 +142,7 @@ li.spacious {
 /* All &lt;li&gt; elements with a class list that includes both "spacious" and "elegant", e.g. class="elegant retro spacious" */
 li.spacious.elegant {
   margin: 2em;
-}
-          </code>
+}          </code>
         </pre>
       </section>
       <section class="main-section" id="ID_selectors">
@@ -171,8 +153,7 @@ li.spacious.elegant {
 /* The element with id="demo" */
 #demo {
   border: red 2px solid;
-}
-          </code>
+}          </code>
         </pre>
       </section>
       <section class="main-section" id="Type_selectors">
@@ -183,8 +164,7 @@ li.spacious.elegant {
 /* All &lt;a&gt; elements */
 a {
   color: red;
-}
-          </code>
+}          </code>
         </pre>
         <p>Type selectors can be namespaced using <code>@namespace</code>. This is useful when dealing with documents containing multiple namespaces such as HTML with inline SVG or MATHML, or XML that mixes multiple vocabularies.</p>
         <ul>
@@ -203,8 +183,7 @@ a {
 @namespace example url(http://www.example.com);
 example|h1 {
   color: blue;
-}
-          </code>
+}          </code>
         </pre>
       </section>
       <section class="main-section" id="Universal_selectors">
@@ -227,8 +206,7 @@ example|h1 {
 /* Automatically clear the next sibling after a floating element */
 .floating + * {
   clear: left;
-}
-          </code>
+}          </code>
         </pre>
         <p>The universal selector is a special type selector and can therefore be namespaced using <code>@namespace</code>.</p>
         <ul>
@@ -241,11 +219,10 @@ example|h1 {
 @namespace example url(http://www.example.com);
 example|* {
   color: blue;
-}
-          </code>
+}          </code>
         </pre>
       </section>
-      <section class="main-section" id="Reference">
+      <section class="reference" id="Reference">
         <header>Reference</header>
         <p>All documentation on this page is taken from <a href="https://developer.mozilla.org/en-US/docs/Web/CSS">MDN</a>.</p>
       </section>
