@@ -3,12 +3,12 @@
 }
 
 :root {
-  font-size: 1.2rem;
-  --color-background: #212126;
+  font-size: 1rem;
+  --color-background: #18181b;
   --color-text: #EBEBEF;
   --color-primary: #60D3FF;
   --color-codeblock: #2f2f37;
-  --color-border: #a0a0ac;
+  --color-border: #6b6b7b;
   --padding: 1.5em;
   --navbar-width: 230px;
   --navbar-height: 140px;
@@ -17,7 +17,8 @@
 body {
   background-color: var(--color-background);
   color: var(--color-text);
-  font-family: Arial, sans-serif;
+  font-family: Inter, sans-serif;
+  font-weight: 300;
   margin: 0;
   padding: 0;
   min-width: 350px;
@@ -25,6 +26,7 @@ body {
 
 header {
   font-size: 1.25em;
+  font-weight: 600;
   color: var(--color-primary);
 }
 
@@ -39,7 +41,7 @@ a {
   left: 0px;
   height: 100%;
   padding: var(--padding);
-  border-right: solid var(--color-border);
+  border-right: 0.5px solid var(--color-border);
 }
 
 #navbar > ul {
@@ -77,11 +79,11 @@ pre {
 
 code {
   white-space: pre-wrap;
-  font-family: 'Courier New', Courier, monospace;
-}
-
-pre > code {
+  font-family: 'Google Sans Code', monospace;
   font-size: 0.85em;
+  background-color: var(--color-codeblock);
+  padding: 0.05em 0.15em;
+  border-radius: 0.4em;
 }
 
 @media (max-width: 650px) {
@@ -90,7 +92,7 @@ pre > code {
     height: var(--navbar-height);
     position: sticky;
     background-color: var(--color-background);
-    border-bottom: solid var(--color-border);
+    border-bottom: 0.5px solid var(--color-border);
     padding-bottom: 0;
     overflow-x: auto;
   }
@@ -103,7 +105,6 @@ pre > code {
     width: unset;
     display: flex;
     margin: 0.5em;
-    font-size: 0.9em;
     gap: 0.5em;
   }
 

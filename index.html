@@ -3,6 +3,8 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,300..600;1,14..32,300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Google+Sans+Code:ital,wght@0,300;1,300&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     <title>CSS Selectors</title>
   </head>
@@ -24,10 +26,11 @@
         <ul>
           <li>
             <code>[attr]</code>
-            <p>Represents elements with an attribute name of <em>attr</em>.</p>
+            <p>Represents elements with an attribute name of <code>attr</code>.</p>
             <pre>
               <code>
-/* &lt;a&gt; elements with a title attribute */
+<i>/* &lt;a&gt; elements with a title attribute */</i>
+
 a[title] {
   color: purple;
 }              </code>
@@ -35,10 +38,11 @@ a[title] {
           </li>
           <li>
             <code>element::not([attr])</code>
-            <p>Represents elements without an attribute name of <em>attr</em>.</p>
+            <p>Represents elements without an attribute name of <code>attr</code>.</p>
             <pre>
               <code>
-/* All divs without a `lang` attribute are italicized. */
+<i>/* All divs without a `lang` attribute are italicized. */</i>
+
 div::not([lang]) {
   font-style: italic;
 }              </code>
@@ -46,10 +50,11 @@ div::not([lang]) {
           </li>
           <li>
             <code>[attr=value]</code>
-            <p>Represents elements with an attribute name of <em>attr</em> whose value is exactly <em>value</em>.</p>
+            <p>Represents elements with an attribute name of <code>attr</code> whose value is exactly <code>value</code>.</p>
             <pre>
               <code>
-/* &lt;a&gt; elements with an href matching "https://example.org" */
+<i>/* &lt;a&gt; elements with an href matching "https://example.org" */</i>
+
 a[href="https://example.org"]
 {
   color: green;
@@ -58,10 +63,11 @@ a[href="https://example.org"]
           </li>
           <li>
             <code>[attr~=value]</code>
-            <p>Represents elements with an attribute name of <em>attr</em> whose value is a whitespace-separated list of words, one of which is exactly <em>value</em>.</p>
+            <p>Represents elements with an attribute name of <code>attr</code> whose value is a whitespace-separated list of words, one of which is exactly <code>value</code>.</p>
             <pre>
               <code>
-/* &lt;a&gt; elements whose class attribute contains the word "logo" */
+<i>/* &lt;a&gt; elements whose class attribute contains the word "logo" */</i>
+
 a[class~="logo"] {
   padding: 2px;
 }              </code>
@@ -69,10 +75,11 @@ a[class~="logo"] {
           </li>
           <li>
             <code>[attr|=value]</code>
-            <p>Represents elements with an attribute name of <em>attr</em> whose value can be exactly <em>value</em> or can begin with <em>value</em> immediately followed by a hyphen, <code>-</code> (U+002D). It is often used for language subcode matches.</p>
+            <p>Represents elements with an attribute name of <code>attr</code> whose value can be exactly <code>value</code> or can begin with <code>value</code> immediately followed by a hyphen, <code>-</code> (U+002D). It is often used for language subcode matches.</p>
             <pre>
               <code>
-/* All divs in Chinese are red, whether simplified (zh-CN) or traditional (zh-TW). */
+<i>/* All divs in Chinese are red, whether simplified (zh-CN) or traditional (zh-TW). */</i>
+
 div[lang|="zh"] {
   color: red;
 }              </code>
@@ -80,10 +87,11 @@ div[lang|="zh"] {
           </li>
           <li>
             <code>[attr^=value]</code>
-            <p>Represents elements with an attribute name of <em>attr</em> whose value is prefixed (preceded) by <em>value</em>.</p>
+            <p>Represents elements with an attribute name of <code>attr</code> whose value is prefixed (preceded) by <code>value</code>.</p>
             <pre>
               <code>
-/* Internal links, beginning with "#" */
+<i>/* Internal links, beginning with "#" */</i>
+
 a[href^="#"] {
   background-color: gold;
 }              </code>
@@ -91,10 +99,11 @@ a[href^="#"] {
           </li>
           <li>
             <code>[attr$=value]</code>
-            <p>Represents elements with an attribute name of <em>attr</em> whose value is suffixed (followed) by <em>value</em>.</p>
+            <p>Represents elements with an attribute name of <code>attr</code> whose value is suffixed (followed) by <code>value</code>.</p>
             <pre>
               <code>
-/* &lt;a&gt; elements with an href ending ".org" */
+<i>/* &lt;a&gt; elements with an href ending ".org" */</i>
+
 a[href$=".org"] {
   font-style: italic;
 }              </code>
@@ -102,10 +111,11 @@ a[href$=".org"] {
           </li>
           <li>
             <code>[attr*=value]</code>
-            <p>Represents elements with an attribute name of <em>attr</em> whose value contains at least one occurence of <em>value</em> within the string.</p>
+            <p>Represents elements with an attribute name of <code>attr</code> whose value contains at least one occurence of <code>value</code> within the string.</p>
             <pre>
               <code>
-/* Links with "example" anywhere in the URL */
+<i>/* Links with "example" anywhere in the URL */</i>
+
 a[href*="example"] {
   background-color: silver;
 }              </code>
@@ -116,7 +126,8 @@ a[href*="example"] {
             <p>Adding an <code>i</code> (or <code>I</code>) before the closing bracket causes the value to be compared case-insensitively (for characters within the ASCII range).</p>
             <pre>
               <code>
-/* Links with "insensitive" anywhere in the URL, regardless of capitalization */
+<i>/* Links with "insensitive" anywhere in the URL, regardless of capitalization */</i>
+
 a[href*="insensitive" i] {
   color: cyan;
 }              </code>
@@ -129,17 +140,20 @@ a[href*="insensitive" i] {
         <p>The CSS class selector matches elements based on the contents of their class attribute.</p>
         <pre>
           <code>
-/* All elements with class="spacious" */
+<i>/* All elements with class="spacious" */</i>
+
 .spacious {
   margin: 2em;
 }
 
-/* All &lt;li&gt; elements with class="spacious" */
+<i>/* All &lt;li&gt; elements with class="spacious" */</i>
+
 li.spacious {
   margin: 2em;
 }
 
-/* All &lt;li&gt; elements with a class list that includes both "spacious" and "elegant", e.g. class="elegant retro spacious" */
+<i>/* All &lt;li&gt; elements with a class list that includes both "spacious" and "elegant", e.g. class="elegant retro spacious" */</i>
+
 li.spacious.elegant {
   margin: 2em;
 }          </code>
@@ -150,7 +164,8 @@ li.spacious.elegant {
         <p>The CSS ID selector matches an element based on the value of the element's <code>id</code> attribute. In order for the element to be selected, its <code>id</code> attribute must match exactly the value given in the selector.</p>
         <pre>
           <code>
-/* The element with id="demo" */
+<i>/* The element with id="demo" */</i>
+
 #demo {
   border: red 2px solid;
 }          </code>
@@ -161,7 +176,8 @@ li.spacious.elegant {
         <p>The CSS type selector matches elements by node name. In other words, it selects all elements of the given type within a document.</p>
         <pre>
           <code>
-/* All &lt;a&gt; elements */
+<i>/* All &lt;a&gt; elements */</i>
+
 a {
   color: red;
 }          </code>
@@ -203,14 +219,15 @@ example|h1 {
   float: left;
 }
 
-/* Automatically clear the next sibling after a floating element */
+<i>/* Automatically clear the next sibling after a floating element */</i>
+
 .floating + * {
   clear: left;
 }          </code>
         </pre>
         <p>The universal selector is a special type selector and can therefore be namespaced using <code>@namespace</code>.</p>
         <ul>
-          <li><code>ns|*</code> - matches all elements in namespace <em>ns</em></li>
+          <li><code>ns|*</code> - matches all elements in namespace <code>ns</code></li>
           <li><code>*|*</code> - matches all elements</li>
           <li><code>|*</code> - matches all elements without any declared namespace</li>
         </ul>
